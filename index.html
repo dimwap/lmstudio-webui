@@ -580,23 +580,6 @@
       }
       updateChatList();
     }
-    
-    // Ejects the currently loaded model.
-    async function ejectCurrentModel(oldModel) {
-      const serverUrl = serverUrlInput.value.trim();
-      try {
-        await fetch(`${serverUrl}/v1/model/eject`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model: oldModel })
-        });
-        console.log(`Model ${oldModel} ejected.`);
-      } catch (error) {
-        console.error("Error ejecting model:", error);
-      }
-    }
-    
-    // Build conversation history without merging messages.
     // The history starts with the system prompt, then includes each stored message in order.
     function buildConversationHistory() {
       const systemPrompt = currentChat.messages.some(msg => msg.isImage)

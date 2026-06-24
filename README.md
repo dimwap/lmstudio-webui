@@ -18,16 +18,17 @@ This is a simple, browser-based chat interface for interacting with your LM Stud
 - Delete Chats **NEW**
 
 
+![image](https://github.com/user-attachments/assets/d7cba468-166b-4d74-a98a-37ca72093b83)
+
+
+
+
 ## Setup Instructions
 
 ### For Desktop Users
 
 1. Download the `lmstudiowebui.html` file from this repository.
 2. Save it to a location on your computer that you can easily access.
-3. Open it with browser.
-4. Check if LM Studio setup CORS is `on`.
-5. Enter localhost in format: http://192.168.0.123:1234 and press connect.
-6. Select model from the drop-down list.
 
 ### For Mobile Users
 This works out of the box on Android devices. For iOS you need to open the file in Microsoft Edge or another browser. Safari/Chrome do not work. 
@@ -85,14 +86,63 @@ There are several ways to get the `lmstudiowebui.html` file on your mobile devic
 
 ## Security Note
 
-This interface is designed for *local use* only. **Do not** expose your LM Studio server to the public internet without proper security measures in place.
+This interface is designed for local use only. Do not expose your LM Studio server to the public internet without proper security measures in place.
 
 ## Feedback and Contributions
 
-This is a personal project. While the code is public for anyone to use and learn from, I am **not accepting pull requests** for new features or bug fixes. 
-
-If you find an issue or have a suggestion, please open an issue to discuss it.
+This is a personal project. While the code is public for anyone to use and learn from, I am **not accepting pull requests** for new features or bug fixes. If you find an issue or have a suggestion, please open an issue to discuss it.
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=YorkieDev/LMStudioWebUI&type=Date)](https://star-history.com/#YorkieDev/LMStudioWebUI&Date)
+
+---
+
+## 📝 Fixes Applied (2026-06-24)
+
+### OpenAI Compatibility API Fixes
+
+This repository has been updated to fix compatibility issues with modern versions of LM Studio. The following changes were made to `index.html`:
+
+1. **Removed deprecated model ejection API**
+   - Deleted the `ejectCurrentModel()` function that called `/v1/model/eject`
+   - Modern LM Studio handles model ejection automatically via `/v1/chat/completions`
+
+2. **Fixed model list parsing**
+   - Changed from expecting `{ data: [{ id }] }` format
+   - Now correctly parses modern LM Studio's response: `{ models: [{ id }] }`
+   - Fallback to `data.data` for legacy servers still works
+
+3. **Added robust error handling**
+   - Improved JSON parsing in streaming responses
+   - Better error messages for connection failures
+
+### How to Use the Fixed Version
+
+1. **Download the fixed file**:
+   ```bash
+   # Clone this repository
+   git clone <repo-url>
+   cd lmstudiowebui-main
+   
+   # Download the fixed version (index.html is modified)
+   ```
+
+2. **Open directly**:
+   - Desktop: Double-click `index.html` or open via browser
+   - Mobile: Transfer to device and open with Edge (iOS) or any browser (Android)
+
+### Verification
+
+Test the fixed version with a local LM Studio instance:
+
+```bash
+# Start LM Studio server
+lmstudio --server
+
+# Test the connection
+curl http://localhost:1234/v1/models
+```
+
+The fixed web UI should now correctly list available models without errors.
+
