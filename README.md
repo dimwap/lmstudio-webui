@@ -18,22 +18,16 @@ This is a simple, browser-based chat interface for interacting with your LM Stud
 - Delete Chats **NEW**
 
 
-## Screenshots 📸
-![image](https://github.com/user-attachments/assets/7944a30a-6e52-467b-bf27-309f8db0bfde)
-![image](https://github.com/user-attachments/assets/cecc2e50-1583-4ce6-a092-10adcb2359f3)
-![image](https://github.com/user-attachments/assets/717bb8c6-ff62-4574-95e4-146909302180)
-![image](https://github.com/user-attachments/assets/22275a46-f332-4ab9-b727-678a98aef7af)
-![image](https://github.com/user-attachments/assets/d7cba468-166b-4d74-a98a-37ca72093b83)
-
-
-
-
 ## Setup Instructions
 
 ### For Desktop Users
 
 1. Download the `lmstudiowebui.html` file from this repository.
 2. Save it to a location on your computer that you can easily access.
+3. Open it with browser.
+4. Check if LM Studio setup CORS is `on`.
+5. Enter localhost in format: http://192.168.0.123:1234 and press connect.
+6. Select model from the drop-down list.
 
 ### For Mobile Users
 This works out of the box on Android devices. For iOS you need to open the file in Microsoft Edge or another browser. Safari/Chrome do not work. 
@@ -91,11 +85,13 @@ There are several ways to get the `lmstudiowebui.html` file on your mobile devic
 
 ## Security Note
 
-This interface is designed for local use only. Do not expose your LM Studio server to the public internet without proper security measures in place.
+This interface is designed for *local use* only. **Do not** expose your LM Studio server to the public internet without proper security measures in place.
 
 ## Feedback and Contributions
 
-This is a personal project. While the code is public for anyone to use and learn from, I am **not accepting pull requests** for new features or bug fixes. If you find an issue or have a suggestion, please open an issue to discuss it.
+This is a personal project. While the code is public for anyone to use and learn from, I am **not accepting pull requests** for new features or bug fixes. 
+
+If you find an issue or have a suggestion, please open an issue to discuss it.
 
 ## Star History
 
