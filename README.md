@@ -92,10 +92,6 @@ This interface is designed for local use only. Do not expose your LM Studio serv
 
 This is a personal project. While the code is public for anyone to use and learn from, I am **not accepting pull requests** for new features or bug fixes. If you find an issue or have a suggestion, please open an issue to discuss it.
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=YorkieDev/LMStudioWebUI&type=Date)](https://star-history.com/#YorkieDev/LMStudioWebUI&Date)
-
 ---
 
 ## 📝 Fixes Applied (2026-06-24)
@@ -146,3 +142,14 @@ curl http://localhost:1234/v1/models
 
 The fixed web UI should now correctly list available models without errors.
 
+---
+- memo  (git commands)
+
+# Добавить все изменения сразу
+git add .
+
+# Сделать коммит с описанием
+git commit -m "Исправил ошибку в коде"
+
+# Загрузить изменения на GitHub (на ветку main)
+git push origin main
